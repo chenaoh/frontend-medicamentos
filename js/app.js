@@ -1,6 +1,7 @@
 
 const API_URL =
-    "http://localhost:8080/api/medicamentos";
+    "https://api-medicamentos-prod.azurewebsites.net/api/medicamentos";
+    //"http://localhost:8080/api/medicamentos";
 
 let idMedicamentoEditando = null;
 
