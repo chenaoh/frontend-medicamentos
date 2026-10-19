@@ -1,3 +1,4 @@
+
 * {
     box-sizing: border-box;
 }
@@ -22,8 +23,26 @@ h2 {
     text-align: center;
 }
 
+/* Distribución de los campos del formulario */
+.grid-formulario {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 15px;
+}
+
 .campo {
-    margin-bottom: 15px;
+    margin-bottom: 5px;
+    min-width: 0;
+}
+
+/* Nombre y principio activo: mitad del ancho */
+.col-6 {
+    grid-column: span 6;
+}
+
+/* Laboratorio, precio y stock: un tercio del ancho */
+.col-4 {
+    grid-column: span 4;
 }
 
 .campo label {
@@ -39,6 +58,7 @@ h2 {
     border-radius: 5px;
 }
 
+/* Botones */
 .botones {
     margin-top: 20px;
     text-align: center;
@@ -52,6 +72,7 @@ button {
     margin: 5px;
 }
 
+/* Tabla de medicamentos */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -67,4 +88,28 @@ td {
 
 th {
     background-color: #eeeeee;
+}
+
+/* Adaptación para pantallas pequeñas */
+@media (max-width: 650px) {
+    body {
+        padding: 10px;
+    }
+
+    .contenedor {
+        padding: 15px;
+    }
+
+    .grid-formulario {
+        grid-template-columns: 1fr;
+    }
+
+    .col-6,
+    .col-4 {
+        grid-column: span 1;
+    }
+
+    .tabla-contenedor {
+        overflow-x: auto;
+    }
 }
